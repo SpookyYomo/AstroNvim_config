@@ -1,3 +1,13 @@
+# AstroNvim Config
+
+This repository is my personal branch of AstroNvim/template; intended to be a
+git submodule under my dotfiles repository. This repository was generated
+during https://github.com/AstroNvim/template/commit/20450d8a65a74be39d2c92bc8689b1acccf2cffe.
+
+## Taking changes from upstream
+
+*TBD*.
+
 # AstroNvim Template
 
 **NOTE:** This is for AstroNvim v4+
