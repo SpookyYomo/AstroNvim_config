@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- Customize Mason plugins
 
 ---@type LazySpec
@@ -10,8 +8,17 @@ return {
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
       ensure_installed = {
+        "bashls", -- bash-language-server
+        "clangd",
+        "jsonls", -- json-lsp
+        "ltex", -- ltex-ls
         "lua_ls",
-        -- add more arguments for adding more language servers
+        "pyright",
+        "pylsp", -- python-lsp-server,
+        "ruff",
+        "ruff_lsp", -- ruff-lsp
+        "rust_analyzer", -- rust-analyzer
+        "texlab",
       },
     },
   },
@@ -21,8 +28,18 @@ return {
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
       ensure_installed = {
+        "bash-debug-adapter",
+        -- "prettier",
+        "codespell",
+        "debugpy",
+        "gitlint",
+        "gitui",
+        "latexindent",
+        "pydocstyle",
+        "ruff",
+        "selene",
         "stylua",
-        -- add more arguments for adding more null-ls sources
+        "tree-sitter-cli",
       },
     },
   },
@@ -31,8 +48,8 @@ return {
     -- overrides `require("mason-nvim-dap").setup(...)`
     opts = {
       ensure_installed = {
+        "codelldb",
         "python",
-        -- add more arguments for adding more debuggers
       },
     },
   },

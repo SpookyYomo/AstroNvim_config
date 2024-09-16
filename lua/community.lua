@@ -16,4 +16,5 @@ return {
       "NvimTreeNormal", -- NvimTree
     },
   },
+  { import = "astrocommunity.pack.cpp" },
 }
