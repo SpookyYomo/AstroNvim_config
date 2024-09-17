@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -64,8 +62,18 @@ return {
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
 
+        -- quick save
+        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+      },
+      t = {
+        ["<Esc>"] = { "<C-Bslash><C-n>", desc = "Exit Terminal Mode" },
+      },
+      i = {
+        -- Move current line down/up
+        ["<A-j>"] = { "<Esc>:m .+1<CR>==gi", desc = "Move line down" },
+        ["<A-k>"] = { "<Esc>:m .-2<CR>==gi", desc = "Move line up" },
       },
     },
   },
