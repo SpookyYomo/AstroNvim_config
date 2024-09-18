@@ -35,6 +35,12 @@ return {
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
+
+        -- This may vary between various installations. On ArchLinux, ensure that pacman has installed
+        -- python-pynvim.
+        -- The following key-value pair is for Python DAP things?. See :h provider-python
+        python3_host_prog = "/usr/bin/python",
+        python_host_prog = "/usr/bin/python",
       },
     },
     -- Mappings can be configured through AstroCore as well.
