@@ -3,6 +3,15 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
+-- Assist vim.g in obtaining the correct Python to be using.
+local function resolvePythonPath()
+  if vim.env.PYENV_VERSION == nil then
+    return "~/.local/share/pyenv/shims/python"
+  else
+    return "~/.local/share/pyenv/versions/" .. vim.env.PYENV_VERSION .. "/bin/python"
+  end
+end
+
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
@@ -39,8 +48,8 @@ return {
         -- This may vary between various installations. On ArchLinux, ensure that pacman has installed
         -- python-pynvim.
         -- The following key-value pair is for Python DAP things?. See :h provider-python
-        python3_host_prog = "/usr/bin/python",
-        python_host_prog = "/usr/bin/python",
+        python3_host_prog = resolvePythonPath(),
+        -- python_host_prog = "/usr/bin/python",
       },
     },
     -- Mappings can be configured through AstroCore as well.
