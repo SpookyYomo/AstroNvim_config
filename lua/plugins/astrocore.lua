@@ -50,6 +50,9 @@ return {
         -- The following key-value pair is for Python DAP things?. See :h provider-python
         python3_host_prog = resolvePythonPath(),
         -- python_host_prog = "/usr/bin/python",
+        vimtex_view_method = "general",
+        vimtex_view_general_viewer = "okular",
+        vimtex_view_general_options = "--unique file:@pdf#src:@line@tex",
       },
     },
     -- Mappings can be configured through AstroCore as well.
