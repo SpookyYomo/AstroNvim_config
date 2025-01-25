@@ -16,7 +16,6 @@ return {
         "pyright",
         "pylsp", -- python-lsp-server,
         "ruff",
-        "ruff_lsp", -- ruff-lsp
         "rust_analyzer", -- rust-analyzer
         "texlab",
       },
