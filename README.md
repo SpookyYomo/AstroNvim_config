@@ -10,7 +10,7 @@ during https://github.com/AstroNvim/template/commit/20450d8a65a74be39d2c92bc8689
 
 # AstroNvim Template
 
-**NOTE:** This is for AstroNvim v4+
+**NOTE:** This is for AstroNvim v5+
 
 A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
