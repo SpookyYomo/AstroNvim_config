@@ -1,13 +1,14 @@
--- Customize Mason plugins
+-- Customize Mason
 
 ---@type LazySpec
 return {
-  -- use mason-lspconfig to configure LSP installations
+  -- use mason-tool-installer for automatically installing Mason packages
   {
-    "williamboman/mason-lspconfig.nvim",
-    -- overrides `require("mason-lspconfig").setup(...)`
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    -- overrides `require("mason-tool-installer").setup(...)`
     opts = {
       ensure_installed = {
+	-- install language servers
         "bashls", -- bash-language-server
         "clangd",
         "jsonls", -- json-lsp
@@ -18,17 +19,9 @@ return {
         "ruff",
         "rust_analyzer", -- rust-analyzer
         "texlab",
-      },
-    },
-  },
-  -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
-  {
-    "jay-babu/mason-null-ls.nvim",
-    -- overrides `require("mason-null-ls").setup(...)`
-    opts = {
-      ensure_installed = {
+
+	-- install formatters/former null-ls sources
         "bash-debug-adapter",
-        -- "prettier",
         "codespell",
         "debugpy",
         "gitlint",
@@ -39,16 +32,10 @@ return {
         "selene",
         "stylua",
         "tree-sitter-cli",
-      },
-    },
-  },
-  {
-    "jay-babu/mason-nvim-dap.nvim",
-    -- overrides `require("mason-nvim-dap").setup(...)`
-    opts = {
-      ensure_installed = {
+
+	-- debuggers
         "codelldb",
-        "python",
+        "debugpy",
       },
     },
   },
