@@ -52,6 +52,10 @@ return {
         },
       },
     },
+    defaults = {
+      hover = { border = "rounded", silent = true }, -- customize lsp hover window
+      signature_help = false, -- disable any default customizations
+    },
     -- customize how language servers are attached
     handlers = {
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
