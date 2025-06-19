@@ -8,19 +8,19 @@ return {
     -- overrides `require("mason-tool-installer").setup(...)`
     opts = {
       ensure_installed = {
-	-- install language servers
-        "bashls", -- bash-language-server
+        -- install language servers
+        "bash-language-server",
         "clangd",
-        "jsonls", -- json-lsp
-        "ltex", -- ltex-ls
-        "lua_ls",
+        "json-lsp",
+        "ltex-ls",
+        "lua-language-server",
         "pyright",
-        "pylsp", -- python-lsp-server,
+        "python-lsp-server",
         "ruff",
-        "rust_analyzer", -- rust-analyzer
+        "rust-analyzer",
         "texlab",
 
-	-- install formatters/former null-ls sources
+        -- install formatters/former null-ls sources
         "bash-debug-adapter",
         "codespell",
         "debugpy",
@@ -33,7 +33,7 @@ return {
         "stylua",
         "tree-sitter-cli",
 
-	-- debuggers
+        -- debuggers
         "codelldb",
         "debugpy",
       },
