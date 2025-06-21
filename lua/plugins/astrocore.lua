@@ -8,7 +8,9 @@ local function resolvePythonPath()
   if vim.env.PYENV_VERSION == nil then
     return "~/.local/share/pyenv/shims/python"
   else
-    return "~/.local/share/pyenv/versions/" .. vim.env.PYENV_VERSION .. "/bin/python"
+    local full_ver = vim.env.PYENV_VERSION
+    local major_ver = string.sub(full_ver, 1, string.find(full_ver, "%.", string.find(full_ver, "%.") + 1) - 1)
+    return vim.env.HOME .. "/.local/share/pyenv/versions/" .. full_ver .. "/bin/python" .. major_ver
   end
 end
 
