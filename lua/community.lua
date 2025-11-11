@@ -15,8 +15,11 @@ return {
     extra_groups = {
       "NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
       "NvimTreeNormal", -- NvimTree
+      "Trouble*", -- folke/trouble
     },
   },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.motion.marks-nvim" },
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
 }
