@@ -9,6 +9,7 @@ return {
   -- import/override with your plugins folder
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.markdown-and-latex.vimtex" },
+  { import = "astrocommunity.completion.cmp-latex-symbols" },
   {
     import = "astrocommunity.color.transparent-nvim",
     -- enabled = true ,
