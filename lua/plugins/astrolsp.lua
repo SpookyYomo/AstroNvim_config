@@ -39,6 +39,7 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+      "ltex",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
@@ -47,8 +48,16 @@ return {
       -- the value is the configuration table
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
       ltex = {
+        flags = { debounce_text_changes = 400 },
+        -- root_dir = function(fname)
+        --   local util = require "lspconfig.util"
+        --   return util.root_pattern ".git"(fname) or util.path.dirnam(fname) or vim.fn.getcwd()
+        -- end,
+        cmd = { "env", "JAVA_OPTS=-Djdk.xml.totalEntitySizeLimit=0", "ltex-ls-plus" },
         settings = {
-          language = "en-GB",
+          ltex = {
+            language = "en-GB",
+          },
         },
       },
     },

@@ -12,7 +12,7 @@ return {
         "bash-language-server",
         "clangd",
         "json-lsp",
-        "ltex-ls",
+        "ltex-ls-plus",
         "lua-language-server",
         "pyright",
         "python-lsp-server",
