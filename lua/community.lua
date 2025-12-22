@@ -23,4 +23,5 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.motion.marks-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
+  { import = "astrocommunity.pack.harper" },
 }
