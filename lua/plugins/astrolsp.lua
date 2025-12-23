@@ -57,6 +57,50 @@ return {
         settings = {
           ltex = {
             language = "en-GB",
+            disabledRules = {
+              ["en-GB"] = (function()
+                local rules = {}
+                local f = io.open(vim.fn.getcwd() .. "/ltex/ltex.disabledRules.en.txt", "r")
+                if f then
+                  for line in f:lines() do
+                    local rule = line:gsub("%s+", "")
+                    if rule ~= "" then table.insert(rules, rule) end
+                  end
+                  f:close()
+                end
+                return rules
+              end)(),
+            },
+            dictionary = {
+              ["en-GB"] = (function()
+                local words = {}
+                local f = io.open(vim.fn.getcwd() .. "/ltex/ltex.dictionary.en.txt", "r")
+                if f then
+                  for line in f:lines() do
+                    local word = line:gsub("%s+", "")
+                    if word ~= "" then table.insert(words, word) end
+                  end
+                  f:close()
+                end
+                return words
+              end)(),
+            },
+            hiddenFalsePositives = {
+              ["en-GB"] = (function()
+                local fps = {}
+                local f = io.open(vim.fn.getcwd() .. "/ltex/ltex.hiddenFalsePositives.en.txt", "r")
+                if f then
+                  for line in f:lines() do
+                    if line:match("^%s*{") then
+                      local ok, decoded = pcall(vim.json.decode, line)
+                      if ok then table.insert(fps, decoded) end
+                    end
+                  end
+                  f:close()
+                end
+                return fps
+              end)(),
+            },
           },
         },
       },
