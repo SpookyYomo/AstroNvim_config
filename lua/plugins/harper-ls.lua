@@ -10,7 +10,7 @@ return {
             ["harper-ls"] = {
               --- Your configuration
               userDictPath = "",
-              workspaceDictPath = "",
+              workspaceDictPath = "ltex/ltex.dictionary.en.txt",
               fileDictPath = "",
               linters = {
                 SpellCheck = true,
