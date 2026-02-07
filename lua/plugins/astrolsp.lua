@@ -3,6 +3,17 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
+-- Obtain python binary location if venv or otherwise
+local function resolvePythonPath()
+  if vim.env.PYENV_VERSION == nil then
+    return vim.env.HOME .. "/.local/share/pyenv/shims/python"
+  else
+    local full_ver = vim.env.PYENV_VERSION
+    local major_ver = string.sub(full_ver, 1, string.find(full_ver, "%.", string.find(full_ver, "%.") + 1) - 1)
+    return vim.env.HOME .. "/.local/share/pyenv/versions/" .. full_ver .. "/bin/python" .. major_ver
+  end
+end
+
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
@@ -116,7 +127,16 @@ return {
 
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
-      -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
+      pyright = function(_, opts)
+        require("lspconfig").pyright.setup {
+          settings = {
+            python = {
+              pythonPath = resolvePythonPath(),
+              -- venvPath = ...
+            },
+          },
+        }
+      end,
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {
